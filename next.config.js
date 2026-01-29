@@ -1,5 +1,8 @@
 module.exports = {
     async rewrites() {
+      if (!process.env.NEXT_PUBLIC_SERVER_URL) {
+        return [];
+      }
       return [
           {
               source : '/:path*',
@@ -7,9 +10,5 @@ module.exports = {
           }
       ]
     },
-    experimental: {
-        appDir: true,
-    },
     output: 'standalone'
-    // ...다른 Next.js 설정 옵션...
 };

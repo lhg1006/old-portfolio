@@ -22,7 +22,8 @@ const Layout = ({children} : {children: any;}) =>{
 
         if (currentDomain === myIp ||
             currentDomain === myDomain ||
-            currentDomain === subDomain) {
+            currentDomain === subDomain ||
+            currentDomain === 'localhost') {
             setMounted(true);
         }else{
             router.push("/badrequest");
